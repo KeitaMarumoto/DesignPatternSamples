@@ -1,3 +1,8 @@
+[Aa]ssets/
+[Ii]nclude/
+[Rr]esources/
+[Vv]vc2013/
+
 # Compiled Object files
 *.slo
 *.lo
