@@ -1,0 +1,9 @@
+﻿#pragma once
+
+enum Events 
+{
+	LEFT_CLICK_FIVE_TIMES,
+	RIGHT_CLICK_FIVE_TIMES,
+	PUSH_KEY_X,
+	PUSH_KEY_Y
+};

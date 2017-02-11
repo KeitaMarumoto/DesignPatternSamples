@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "cinder/app/AppNative.h"
 #include "cinder/gl/gl.h"
 #include "cinder/gl/Texture.h"
@@ -10,8 +10,8 @@ using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-//ƒ~ƒN‚Ìƒ‚ƒfƒ‹‚Ì’†‚Å•s•Ï‚Ì‚à‚ÌA‹¤—L‚Å‚«‚é‚à‚Ì‚ğ‚Ü‚Æ‚ß‚½ƒNƒ‰ƒXB
-//1í—Ş‚É‚Â‚«1ŒÂ‚ÌƒCƒ“ƒXƒ^ƒ“ƒXB
+//ãƒŸã‚¯ã®ãƒ¢ãƒ‡ãƒ«ã®ä¸­ã§ä¸å¤‰ã®ã‚‚ã®ã€å…±æœ‰ã§ãã‚‹ã‚‚ã®ã‚’ã¾ã¨ã‚ãŸã‚¯ãƒ©ã‚¹ã€‚
+//1ç¨®é¡ã«ã¤ã1å€‹ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã€‚
 class MikuModel {
 private:
 	TriMesh _mesh;
@@ -20,9 +20,9 @@ private:
 public:
 	MikuModel() = default;
 
-	// mesh_path_ = ObjŒ`®‚Ìƒtƒ@ƒCƒ‹ƒpƒX
-	// texture_path_ = Obj‚É’£‚è•t‚¯‚éƒeƒNƒXƒ`ƒƒ‚ÌƒpƒX
-	// ƒ‚ƒfƒ‹ƒf[ƒ^‚ğ“Ç‚İ‚ŞB
+	// mesh_path_ = Objå½¢å¼ã®ãƒ•ã‚¡ã‚¤ãƒ«ãƒ‘ã‚¹
+	// texture_path_ = Objã«å¼µã‚Šä»˜ã‘ã‚‹ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®ãƒ‘ã‚¹
+	// ãƒ¢ãƒ‡ãƒ«ãƒ‡ãƒ¼ã‚¿ã‚’èª­ã¿è¾¼ã‚€ã€‚
 	MikuModel(string mesh_path_, string texture_path_)
 	{
 		ObjLoader _loader = ObjLoader(loadAsset(mesh_path_));
@@ -33,13 +33,13 @@ public:
 		_texture = loadImage(loadAsset(texture_path_));
 	}
 
-	//ƒeƒNƒXƒ`ƒƒ‚ÌQÆ‚ğ•Ô‚·B
+	//ãƒ†ã‚¯ã‚¹ãƒãƒ£ã®å‚ç…§ã‚’è¿”ã™ã€‚
 	inline const gl::Texture& getTexture() const
 	{
 		return _texture;
 	}
 
-	//ƒƒbƒVƒ…‚ÌQÆ‚ğ•Ô‚·B
+	//ãƒ¡ãƒƒã‚·ãƒ¥ã®å‚ç…§ã‚’è¿”ã™ã€‚
 	inline const TriMesh& getTriMesh() const
 	{
 		return _mesh;

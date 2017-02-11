@@ -1,12 +1,12 @@
-#pragma once
+ï»¿#pragma once
 #include "../src/Flyweight/MikuModel.h"
 #include "cinder/Rand.h"
 #include <memory>
 
 using namespace ci;
 
-// ƒ~ƒN‚³‚ñ‚ÌŒÂ‘Ì‚ÌŠ®¬Œ`‚ğ’è‹`‚µ‚½ƒNƒ‰ƒXB
-// •`‰æ‚·‚é”‚¾‚¯ƒCƒ“ƒXƒ^ƒ“ƒXB
+// ãƒŸã‚¯ã•ã‚“ã®å€‹ä½“ã®å®Œæˆå½¢ã‚’å®šç¾©ã—ãŸã‚¯ãƒ©ã‚¹ã€‚
+// æç”»ã™ã‚‹æ•°ã ã‘ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã€‚
 class Miku {
 private:
 	std::shared_ptr<MikuModel> _model;
@@ -24,7 +24,7 @@ public:
 		_speed_value = 0.5f*__speed;
 	}
 
-	//‰æ–Ê‰œ‚ÉŒü‚©‚Á‚ÄˆÚ“®‚µAY²‚Ü‚í‚è‚É‰ñ“]‚·‚éB
+	//ç”»é¢å¥¥ã«å‘ã‹ã£ã¦ç§»å‹•ã—ã€Yè»¸ã¾ã‚ã‚Šã«å›è»¢ã™ã‚‹ã€‚
 	inline void move() 
 	{
 		_rot += _speed_value*5;
