@@ -22,7 +22,7 @@ enum {
 	NUM = 5000           //ミクさんの数
 };
 
-class TestProjectApp : public AppNative {
+class FlyweightApp : public AppNative {
 private:
 	CameraPersp camera;
 
@@ -33,7 +33,7 @@ private:
 	std::vector<std::shared_ptr<Miku>> _miku;
 
 public:
-	TestProjectApp() = default;
+	FlyweightApp() = default;
 	void prepareSettings(Settings *settings);
 	void setup();
 	void shutdown();
@@ -45,12 +45,12 @@ public:
 	void draw();
 };
 
-void TestProjectApp::prepareSettings(Settings * settings)
+void FlyweightApp::prepareSettings(Settings * settings)
 {
 	settings->setWindowSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 }
 
-void TestProjectApp::setup()
+void FlyweightApp::setup()
 {
 	setupCamera();
 	setupLight();
@@ -78,12 +78,12 @@ void TestProjectApp::setup()
 				  GL_SEPARATE_SPECULAR_COLOR);
 }
 
-void TestProjectApp::shutdown()
+void FlyweightApp::shutdown()
 {
 	delete light;
 }
 
-void TestProjectApp::setupCamera()
+void FlyweightApp::setupCamera()
 {
 	camera = CameraPersp(WINDOW_WIDTH, WINDOW_HEIGHT,
 						 60.0f,
@@ -93,7 +93,7 @@ void TestProjectApp::setupCamera()
 	camera.setCenterOfInterestPoint(Vec3f(0.0f, 0.0f, 300.0f));
 }
 
-void TestProjectApp::setupLight()
+void FlyweightApp::setupLight()
 {
 	light = new gl::Light(gl::Light::DIRECTIONAL, 0);
 	light->setAmbient(Color(0.1f, 0.1f, 0.1f));      //環境光
@@ -102,7 +102,7 @@ void TestProjectApp::setupLight()
 	light->setDirection(Vec3f(0.0f, 0.0f, -1.0f));   //光源への向き
 }
 
-void TestProjectApp::setupMaterial()
+void FlyweightApp::setupMaterial()
 {
 	material = gl::Material(ColorA(1.0, 1.0, 1.0),        //環境光
 							ColorA(1.0, 1.0, 1.0),        //拡散光
@@ -110,7 +110,7 @@ void TestProjectApp::setupMaterial()
 							ColorA(0.0, 0.0, 0.0));       //自己発光
 }
 
-void TestProjectApp::setupFog()
+void FlyweightApp::setupFog()
 {
 	//FOG設定
 	gl::enable(GL_FOG);
@@ -121,7 +121,7 @@ void TestProjectApp::setupFog()
 	glFogfv(GL_FOG_COLOR, fog_color_);
 }
 
-void TestProjectApp::setupDepth()
+void FlyweightApp::setupDepth()
 {
 	//深度バッファとカリング、アルファブレンドの設定
 	gl::enableDepthRead();
@@ -130,7 +130,7 @@ void TestProjectApp::setupDepth()
 	gl::enableAlphaBlending();
 }
 
-void TestProjectApp::draw()
+void FlyweightApp::draw()
 {
 	gl::clear(Color(0, 0, 0));
 	gl::setMatrices(camera);
@@ -168,4 +168,4 @@ void TestProjectApp::draw()
 
 	light->disable();
 }
-CINDER_APP_NATIVE(TestProjectApp, RendererGl)
+CINDER_APP_NATIVE(FlyweightApp, RendererGl)
