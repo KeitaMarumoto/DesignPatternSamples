@@ -1,4 +1,4 @@
-﻿#include "../src/Observer/Subject.h"
+﻿#include "Subject.h"
 
 //オブザーバの登録
 //observer_node_ 登録したいオブザーバをもつノード
@@ -39,7 +39,7 @@ void Subject::removeObserver(ObserverNode* observer_node_)
 }
 
 //各オブザーバへの通知を送信
-void Subject::notify(const Entity & entity_, Events event_)
+void Subject::notify(Entity & entity_, Events event_)
 {
 	ObserverNode* observer_node_ = head_;
 

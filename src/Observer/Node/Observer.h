@@ -1,8 +1,8 @@
 ﻿#pragma once
 
-#include "../src/Observer/Events.h"
-#include "../src/Observer/Entity.h"
-#include "../src/Observer/Subject.h"
+#include "../Events.h"
+#include "../Entity/Entity.h"
+#include "../Subject/Subject.h"
 
 //オブザーバ本体。
 //何かSubjectから通知が送られたときに受け取るための基底クラス。これを継承したクラスはすべてオブザーバとなる。
@@ -14,5 +14,5 @@ public:
 	{}
 	
 	virtual ~Observer() {}
-	virtual void onNotify(const Entity& entity_, Events event_) = 0;
+	virtual void onNotify(Entity& entity_, Events event_) = 0;
 };
