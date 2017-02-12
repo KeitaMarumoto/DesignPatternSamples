@@ -5,7 +5,8 @@
 #include "../Subject/Subject.h"
 
 //オブザーバ本体。
-//何かSubjectから通知が送られたときに受け取るための基底クラス。これを継承したクラスはすべてオブザーバとなる。
+//何かSubjectから通知が送られたときに受け取るための基底クラス。
+//これを継承したクラスはすべてオブザーバとなる。
 class Observer 
 {
 	friend class Subject;
