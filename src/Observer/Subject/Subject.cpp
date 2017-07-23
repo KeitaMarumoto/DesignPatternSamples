@@ -3,11 +3,10 @@
 //オブザーバの登録
 //observer_node_ 登録したいオブザーバをもつノード
 //observer_ 登録したいオブザーバ本体
-void Subject::addObserver(ObserverNode* observer_node_, Observer* observer_)
+void Subject::addObserver(ObserverNode* observer_node_)
 {
 	//今現在あるオブザーバの先頭に新たなオブザーバを挿入。
 	observer_node_->next_ = head_;
-	observer_node_->observer_ = observer_;
 	head_ = observer_node_;
 }
 

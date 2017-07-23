@@ -15,7 +15,7 @@ public:
 	: head_(nullptr)
 	{}
 
-	void addObserver(ObserverNode* observer_node_, Observer* observer_);
+	void addObserver(ObserverNode* observer_node_);
 	void removeObserver(ObserverNode* observer_node_);
 	void notify(Entity& entity_, Events event_);
 };
