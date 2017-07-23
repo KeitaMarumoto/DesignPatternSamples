@@ -39,10 +39,7 @@ private:
 
 	Subject input_event;
 
-	Achievements* achievements;
 	ObserverNode* achievements_node;
-
-	FanfareSound* fanfare_sound;
 	ObserverNode* fanfare_sound_node;
 
 	Entity entity;
@@ -82,14 +79,11 @@ void ObserverApp::setup()
 	setupDepth();
 
 	entity = Entity();
-	achievements = new Achievements();
-	achievements_node = new ObserverNode();
+	achievements_node = new ObserverNode(new Achievements());
+	fanfare_sound_node = new ObserverNode(new FanfareSound());
 
-	fanfare_sound = new FanfareSound();
-	fanfare_sound_node = new ObserverNode();
-
-	input_event.addObserver(achievements_node, achievements);
-	input_event.addObserver(fanfare_sound_node, fanfare_sound);
+	input_event.addObserver(achievements_node);
+	input_event.addObserver(fanfare_sound_node);
 
 	entity.setColor(Color(1.f, 1.f, 1.f));
 	color = entity.getColor();
@@ -103,9 +97,7 @@ void ObserverApp::setup()
 void ObserverApp::shutdown()
 {
 	delete light;
-	delete achievements;
 	delete achievements_node;
-	delete fanfare_sound;
 	delete fanfare_sound_node;
 }
 
