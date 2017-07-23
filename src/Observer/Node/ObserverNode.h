@@ -18,4 +18,9 @@ public:
 	: next_(nullptr),
 	  observer_(nullptr)
 	{}
+
+	ObserverNode(Observer* obs_) 
+	{
+		observer_ = obs_;
+	}
 };
