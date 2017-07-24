@@ -17,8 +17,8 @@ using namespace ci::app;
 using namespace std;
 
 enum {
-	WINDOW_WIDTH = 1200,
-	WINDOW_HEIGHT = 900
+	WINDOW_WIDTH = 800,
+	WINDOW_HEIGHT = 600
 };
 
 
