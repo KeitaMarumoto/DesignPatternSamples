@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "../Node/Observer.h"
 #include "../Subject/Subject.h"
+#include <memory>
 
 //オブザーバを格納しているノード。連結リスト構造。
 //オブザーバ本体を連結リストにすると一つのサブジェクトにしか登録できなくなるため
@@ -11,7 +12,7 @@ class ObserverNode
 	friend class Observer;
 private:
 	ObserverNode* next_;
-	Observer* observer_;
+	std::shared_ptr<Observer> observer_;
 
 public:
 	ObserverNode()
@@ -19,7 +20,7 @@ public:
 	  observer_(nullptr)
 	{}
 
-	ObserverNode(Observer* obs_) 
+	ObserverNode(std::shared_ptr<Observer> obs_) 
 	{
 		observer_ = obs_;
 	}

@@ -79,8 +79,8 @@ void ObserverApp::setup()
 	setupDepth();
 
 	entity = Entity();
-	achievements_node = new ObserverNode(new Achievements());
-	fanfare_sound_node = new ObserverNode(new FanfareSound());
+	achievements_node = new ObserverNode(std::make_shared<Achievements>());
+	fanfare_sound_node = new ObserverNode(std::make_shared<FanfareSound>());
 
 	input_event.addObserver(achievements_node);
 	input_event.addObserver(fanfare_sound_node);
